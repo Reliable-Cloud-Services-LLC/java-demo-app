@@ -20,6 +20,7 @@ docker build -t java-app
 5.) Log into console and go to the ECR repo
 6.) Get the commands to login, tag and push to the repo
 7.) put the commands into terminal
+---
 **Create VPC and EKS Cluster** 
 1.) cd terraformdepolyments
 2.)terraform init
@@ -29,6 +30,8 @@ docker build -t java-app
 
 ---
 #Automating and running on a Jenkins pipeline
+**To do this follow the following steps**
+
 1.) Log into Jenkins
 2.) create a new pipeline project
 3.) USE SCM and git to run the pipeline
