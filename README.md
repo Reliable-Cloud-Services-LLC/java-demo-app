@@ -11,7 +11,6 @@ After we create an ECR repo, VPC and EKS cluster using Terraform to help aid aut
 To run this code locally first create a docker image using the DockerFile that is provided. 
 To build the docker image run this command
 docker build -t java-app
-
 Next we create the ECR repo and push docker image to ECR\
 1.) cd ecr\
 2.) terraform init\
@@ -19,27 +18,27 @@ Next we create the ECR repo and push docker image to ECR\
 4.) terraform apply\
 5.) Log into console and go to the ECR repo\
 6.) Get the commands to login, tag and push to the repo\
-7.) put the commands into terminal\
+7.) put the commands into terminal
 ---
 Create VPC and EKS Cluster 
 1.) cd terraformdepolyments\
 2.)terraform init\
 3.)terraform plan\
 4.)terraform apply\
- Get the url from the output and the java app should appear\
+ Get the url from the output and the java app should appear
 
 ---
-Automating and running on a Jenkins pipeline/
-To do this follow the following steps\
+Automating and running on a Jenkins pipeline
+To do this follow the following steps
 
-1.) Log into Jenkins\
-2.) create a new pipeline project\
-3.) USE SCM and git to run the pipeline\
-4.) paste the git repo https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git\
-5.) change master to main\
-6.) path is Jenkinsfile\
-7.) create \
-8.) build the pipeline\
+  Log into Jenkins\
+ create a new pipeline project\
+USE SCM and git to run the pipeline\
+paste the git repo https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git\
+ change master to main\
+ path is Jenkinsfile\
+ create \
+ build the pipeline
 --- 
 #Stages of the pipeline explained in detail
 Git CheckOut Stage
