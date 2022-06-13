@@ -36,19 +36,19 @@ terraform apply --auto-approve'''
 }
 stage('Terraform init for other resources '){
     steps{
-         sh '''cd terraformdeployments
+         sh '''cd other
          terraform init'''
     }
 }
 stage('Terraform plan for other resources'){
 steps{
-    sh '''cd terraformdeployments
+    sh '''other
 terraform plan'''
 }
 }
 stage('Terraform apply for other resources'){
 steps{
-    sh '''cd terraformdeployments
+    sh '''cd other
 terraform apply --auto-approve'''
 }
 }
@@ -80,7 +80,7 @@ terraform apply --auto-approve'''
 stage('Terraform destroy terraform deployments'){
 steps{
 
-sh '''cd terraformdeployments
+sh '''cd other
 terraform apply --auto-approve'''
 }
 }
