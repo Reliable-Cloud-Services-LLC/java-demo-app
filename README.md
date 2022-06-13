@@ -16,7 +16,10 @@ To run this code locally first create a docker image using the DockerFile that i
 To build the docker image run this command
 docker build -t java-app
 Next we create the ECR repo and push docker image to ECR\
-1.) cd ecr\
+
+```
+ cd ecr
+```
 2.) terraform init\
 3.)terraform plan\
 4.) terraform apply\
