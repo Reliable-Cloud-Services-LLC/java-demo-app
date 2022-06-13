@@ -36,19 +36,19 @@ terraform apply --auto-approve'''
 }
 stage('Terraform init for other resources '){
     steps{
-         sh '''cd other
+         sh '''cd terraformdeployments
          terraform init'''
     }
 }
 stage('Terraform plan for other resources'){
 steps{
-    sh '''cd other
+    sh '''cd terraformdeployments
 terraform plan'''
 }
 }
 stage('Terraform apply for other resources'){
 steps{
-    sh '''cd other
+    sh '''cd terraformdeployments
 terraform apply --auto-approve'''
 }
 }
@@ -67,6 +67,22 @@ stage('image to ECR'){
        sh 'docker tag demo-repo:latest 202467142321.dkr.ecr.us-east-1.amazonaws.com/demo-repo:latest' 
             sh 'docker push 202467142321.dkr.ecr.us-east-1.amazonaws.com/demo-repo:latest'
     }
+}
+
+stage('Terraform destroy ECR'){
+steps{
+sh '''cd ecr
+terraform apply --auto-approve'''
+
+}
+}
+
+stage('Terraform destroy terraform deployments'){
+steps{
+
+sh '''cd terraformdeployments
+terraform apply --auto-approve'''
+}
 }
 }
 }
