@@ -20,20 +20,45 @@ Next we create the ECR repo and push docker image to ECR\
 ```
  cd ecr
 ```
-2.) terraform init\
-3.)terraform plan\
-4.) terraform apply\
 
-5.) Log into console and go to the ECR repo\
-6.) Get the commands to login, tag and push to the repo\
-7.) put the commands into terminal
+```
+ terraform init
+```
+
+```
+terraform plan
+```
+
+```
+terraform apply\
+```
+
+
+Log into console and go to the ECR repo\
+
+Get the commands to login, tag and push to the repo\
+
+ put the commands into terminal
 
 ### Creating the VPC and EKS cluster for (local use)
-1.)cd other\
-2.)terraform init\
-3.)terraform plan\
-4.)terraform apply\
- Get the url from the output and the java app should appear
+
+```
+cd other
+```
+
+```
+terraform init
+```
+
+```
+terraform plan
+```
+
+```
+terraform apply
+```
+
+Get the url from the output and the java app should appear
 
 
 
