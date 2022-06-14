@@ -57,7 +57,7 @@ stage('Build image'){
     steps{
         script{
           
-            app = docker.build("mrdarr/testingjenkins123")
+            app = docker.build("reliable-cloud-services-llc/java-demo-app")
            
         }
     }
@@ -65,8 +65,8 @@ stage('Build image'){
 stage('image to ECR'){
     steps{
         sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 202467142321.dkr.ecr.us-east-1.amazonaws.com'
-       sh 'docker tag mrdarr/testingjenkins123:latest 202467142321.dkr.ecr.us-east-1.amazonaws.com/mrdarr/testingjenkins123:latest' 
-            sh 'docker push 202467142321.dkr.ecr.us-east-1.amazonaws.com/mrdarr/testingjenkins123:latest'
+       sh 'docker tag reliable-cloud-services-llc/java-demo-app 202467142321.dkr.ecr.us-east-1.amazonaws.com/mrdarr/demo-repo:latest' 
+            sh 'docker push 202467142321.dkr.ecr.us-east-1.amazonaws.com/demo-repo:latest'
     }
 }
 
