@@ -32,6 +32,12 @@ terraform apply --auto-approve'''
 }
 }
 
+stage('Git CheckOut'){
+    steps{
+       checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '41a3bb58-a939-4859-a8b3-4cab0fbd2382', url: 'https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git']]])
+    sh 'cd ecr'
+    }
+}
 stage('terraform init for ecr'){
    steps{
    sh '''cd ecr
