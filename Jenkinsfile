@@ -25,12 +25,6 @@ steps{
 terraform plan'''
 }
 }
-stage('Terraform apply for other resources'){
-steps{
-    sh '''cd other
-terraform apply --auto-approve'''
-}
-}
 
 stage(' second Git CheckOut'){
     steps{
