@@ -76,20 +76,6 @@ stage('image to ECR'){
     }
 }
 
-stage('Terraform destroy ECR'){
-steps{
-sh '''cd ecr
-terraform apply --auto-approve'''
 
-}
-}
-
-stage('Terraform destroy terraform deployments'){
-steps{
-
-sh '''cd other
-terraform apply --auto-approve'''
-}
-}
 }
 }
