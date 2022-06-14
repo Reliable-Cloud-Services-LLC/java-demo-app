@@ -21,7 +21,7 @@ stage('Terraform init for other resources '){
 }
 stage('Terraform plan for other resources'){
 steps{
-    sh '''other
+    sh ''' cd other
 terraform plan'''
 }
 }
