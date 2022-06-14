@@ -9,8 +9,7 @@ stages{
   
 stage('Git CheckOut'){
     steps{
-       checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MrDarr/testingjenkins123.git']]])
-        sh 'cd ecr'
+       checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '41a3bb58-a939-4859-a8b3-4cab0fbd2382', url: 'https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git']]])
     }
 }
 
