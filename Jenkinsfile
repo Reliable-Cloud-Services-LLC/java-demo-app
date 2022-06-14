@@ -10,7 +10,26 @@ stages{
 stage('Git CheckOut'){
     steps{
        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '41a3bb58-a939-4859-a8b3-4cab0fbd2382', url: 'https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git']]])
+    sh 'cd other'
     }
+}
+stage('Terraform init for other resources '){
+    steps{
+         sh '''cd other
+         terraform init'''
+    }
+}
+stage('Terraform plan for other resources'){
+steps{
+    sh '''other
+terraform plan'''
+}
+}
+stage('Terraform apply for other resources'){
+steps{
+    sh '''cd other
+terraform apply --auto-approve'''
+}
 }
 
 stage('terraform init for ecr'){
@@ -33,24 +52,7 @@ steps{
 terraform apply --auto-approve'''
 }
 }
-stage('Terraform init for other resources '){
-    steps{
-         sh '''cd other
-         terraform init'''
-    }
-}
-stage('Terraform plan for other resources'){
-steps{
-    sh '''other
-terraform plan'''
-}
-}
-stage('Terraform apply for other resources'){
-steps{
-    sh '''cd other
-terraform apply --auto-approve'''
-}
-}
+
 stage('Build image'){
     steps{
         script{
