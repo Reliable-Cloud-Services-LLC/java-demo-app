@@ -13,7 +13,7 @@ region = "us-east-1"
 
 }
 resource "aws_ecr_repository" "demo-repository" {
-  name                 = "demo-repo"
+  name                 = "reliable-cloud-services-llc/java-demo-app"
   image_tag_mutability = "IMMUTABLE"
 }
 
