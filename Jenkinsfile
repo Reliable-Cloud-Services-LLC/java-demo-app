@@ -75,6 +75,21 @@ stage('image to ECR'){
             sh 'docker push 202467142321.dkr.ecr.us-east-1.amazonaws.com/reliable-cloud-services-llc/java-demo-app:latest'
     }
 }
+stage('Terraform destroy ECR'){
+steps{
+sh '''cd ecr
+terraform apply --auto-approve'''
+
+}
+}
+
+stage('Terraform destroy terraform deployments'){
+steps{
+
+sh '''cd other
+terraform apply --auto-approve'''
+}
+}
 
 
 }
