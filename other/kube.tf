@@ -6,7 +6,7 @@ resource "kubernetes_deployment" "java" {
     }
   }
 spec {
-    replicas = 0
+    replicas = 2
 selector {
       match_labels = {
         app  = "java-microservice"
