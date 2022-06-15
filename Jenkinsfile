@@ -80,39 +80,5 @@ steps{
 terraform apply --auto-approve'''
 }
 }
-stage('Kube login'){
-    steps{
-        sh 'sudo yum update -y'
-        sh 'aws --version'
-        sh 'aws sts get-caller-identity'
-        sh 'aws eks --region us-east-1 update-kubeconfig --name java-cluster'
-        sh 'kubectl get svc'
-    }
-}
-stage('kube stage terraform init'){
-    steps{
-        sh '''cd other
-cd kube
-terraform init
-'''
-    }
-}
-stage('kube stage terraform plan'){
-    steps{
-        sh '''cd other
-cd kube
-terraform plan
-'''
-    }
-}
-
-stage('kube stage terraform apply'){
-    steps{
-        sh '''cd other
-cd kube
-terraform apply --auto-approve
-'''
-    }
-}
 }
 }
