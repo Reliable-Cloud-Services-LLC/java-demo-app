@@ -95,7 +95,7 @@ terraform init
 '''
     }
 }
-stage('kube stage terraform init'){
+stage('kube stage terraform plan'){
     steps{
         sh '''cd other
 cd kube
@@ -104,7 +104,7 @@ terraform plan
     }
 }
 
-stage('kube stage terraform init'){
+stage('kube stage terraform apply'){
     steps{
         sh '''cd other
 cd kube
