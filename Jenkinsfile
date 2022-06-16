@@ -13,6 +13,14 @@ stage('Git CheckOut'){
     sh 'cd ecr'
     }
 }
+
+stage('Terraform destroy'){
+   steps{
+    sh '''cd other
+terraform destroy --auto-approve'''
+
+}
+}
 stage('terraform init for ecr'){
    steps{
    sh '''cd ecr
