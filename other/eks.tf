@@ -13,6 +13,13 @@ module "eks" {
  subnet_ids = module.vpc.private_subnets
   
 }
+
+provider "kubernetes" {
+  host                   = data.aws_eks_cluster.cluster.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+  token                  = data.aws_eks_cluster_auth.cluster.token
+
+}
 resource "null_resource" "java"{
   depends_on = [module.eks]
   provisioner "local-exec" {
