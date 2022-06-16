@@ -21,7 +21,7 @@ template {
       }
 spec {
         container {
-          image = "202467142321.dkr.ecr.us-east-1.amazonaws.com/reliable-cloud-services-llc/java-demo-app"
+          image = "202467142321.dkr.ecr.us-east-1.amazonaws.com/reliable-cloud-services-llc/java-demo-app:latest"
           name  = "java-microservice-container"
           port {
             container_port = 8080
