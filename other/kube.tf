@@ -1,4 +1,3 @@
-
 resource "kubernetes_deployment" "java" {
   metadata {
     name = "microservice-deployment"
@@ -7,7 +6,7 @@ resource "kubernetes_deployment" "java" {
     }
   }
 spec {
-    replicas = 2
+    replicas = 3
 selector {
       match_labels = {
         app  = "java-microservice"
