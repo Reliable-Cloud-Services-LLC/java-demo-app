@@ -30,7 +30,10 @@ spec {
       }
     }
   }
+ depends_on = [
+      aws_eks_node_group.worker-node-group
 
+  ]
 }
 resource "kubernetes_service" "java" {
   depends_on = [kubernetes_deployment.java]
