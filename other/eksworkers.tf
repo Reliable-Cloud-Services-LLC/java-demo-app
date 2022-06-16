@@ -47,8 +47,8 @@ role = aws_iam_role.workernodes.name
   instance_types = ["t3.micro"]
  
   scaling_config {
-   desired_size = 3
-   max_size   = 3
+   desired_size = 4
+   max_size   = 4
    min_size   = 1
   }
   depends_on = [
