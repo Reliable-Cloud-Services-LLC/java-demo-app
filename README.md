@@ -30,7 +30,7 @@ terraform plan
 ```
 
 ```
-terraform apply\
+terraform apply
 ```
 
 
@@ -78,8 +78,34 @@ path is Jenkinsfile\
 
 ### Stages of the PipeLine Details
 Git CheckOut Stage
-this stage checks out the code from the github and cd into ecr
-Terraform init for ECR, Terraform plan for ECR, Terraform apply for ECR
-creates the ECR repo
+this stage checks out the code from the github and cd into ecr\
 
+Terraform init for ECR, Terraform plan for ECR, Terraform apply for ECR
+creates the ECR repo\
+
+Terraform init for other, Terraform plan for other, Terraform apply for other
+creates resources in the EKS module provided\
+Along with a VPC, and EKS cluster with worker nodes\
+
+### To check if Kubernetes is successfully deployed
+
+```
+ssh ec2-user@<ip of ec2 instance> -i <key pair>
+```
+
+```
+aws eks --region us-east-1 update-kubeconfig --name java-cluster
+```
+
+```
+kubectl get svc
+```
+
+```
+kubectl get pods
+```
+
+```
+kubectl get deployments
+```
 
