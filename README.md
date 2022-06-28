@@ -70,7 +70,7 @@ To do this follow the following steps
  create a new pipeline project\
 USE SCM and git to run the pipeline\
 paste the git repo https://github.com/Reliable-Cloud-Services-LLC/java-demo-app.git\
- change master to main\
+ change master to main
 
 path is Jenkinsfile\
  create \
@@ -87,7 +87,7 @@ Terraform init for other, Terraform plan for other, Terraform apply for other
 creates resources in the EKS module provided\
 Along with a VPC, and EKS cluster with worker nodes\
 
-### To check if Kubernetes is successfully deployed
+### To check if Kubernetes is successfully deployed and to get the URL
 
 ```
 ssh ec2-user@<ip of ec2 instance> -i <key pair>
@@ -108,4 +108,4 @@ kubectl get pods
 ```
 kubectl get deployments
 ```
-
+Once you are able to retrieve the URL paste it in a web browser and add /questions at the end

@@ -1,4 +1,4 @@
-FROM openjdk:16-alpine3.13
+FROM openjdk:17-jdk
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
