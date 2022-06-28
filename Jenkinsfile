@@ -82,5 +82,18 @@ terraform apply --auto-approve'''
 }
 }
 
+
+stage('Terraform destroy for ecr'){
+steps{
+    sh '''cd ecr
+terraform destroy --auto-approve'''
+}
+}
+stage('Terraform destroy for other'){
+steps{
+    sh '''cd other
+terraform destroy --auto-approve'''
+}
+}
 }
 }
