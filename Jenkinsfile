@@ -25,6 +25,10 @@ stage('Git CheckOut'){
         }
             }
         }
+ stage('ECR Scan Report'){
+      sh 'aws ecr describe-image-scan-findings --repository-name reliable-cloud-services-llc/java-demo-app --image-id imageTag=latest --region us-east-1'
+  }
+
 stage('terraform init for ecr'){
    steps{
    sh '''cd ecr
