@@ -1,6 +1,7 @@
 pipeline{
     agent any 
 tools {
+maven 'maven'
   terraform 'terraform'
 }
 
@@ -13,7 +14,17 @@ stage('Git CheckOut'){
     sh 'cd ecr'
     }
 }
-
+ stage('Code Quality Scan'){
+            steps{
+                
+            
+                  withSonarQubeEnv('SonarQube') {
+           
+       sh " mvn clean install -f pom.xml sonar:sonar"
+            
+        }
+            }
+        }
 stage('terraform init for ecr'){
    steps{
    sh '''cd ecr
