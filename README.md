@@ -109,3 +109,34 @@ kubectl get pods
 kubectl get deployments
 ```
 Once you are able to retrieve the URL paste it in a web browser and add /questions at the end
+
+### (Optional) Rancher Installation
+
+```
+cd rancher
+```
+
+```
+cd aws
+```
+In the terraform.tfvars file you are required to provide aws credentials and a password for Rancher to deploy. You have the option to edit these files before deployment or enter it after you terraform apply\
+
+```
+terraform init
+```
+
+```
+terraform plan
+```
+
+```
+terraform apply
+```
+You will recieve a URL for rancher after the process is complete
+
+### Importing an existing EKS cluster
+1. From the Clusters page, Select Add CLuster\
+2. Choose import\
+3.Enter Cluster Name\
+4.Fill out the required fields\
+5.Create

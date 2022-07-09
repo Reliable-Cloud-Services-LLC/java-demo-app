@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Student Management</a>
+        <a class="nav-link" th:href="@{/questions}">Question Management</a>
       </li>
     </ul>
   </div>
@@ -34,13 +34,13 @@
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h1 class = "text-center"> Ask A Question </h1>
 				<div class = "card-body">
-					<form th:action="@{/students}" th:object = "${student}" method="POST">
+					<form th:action="@{/questions}" th:object = "${question}" method="POST">
 						<div class ="form-group">
 							<label> Question </label>
 							<input
 							type = "text"
-							name = "firstName"
-							th:field = "*{firstName}"
+							name = "list"
+							th:field = "*{list}"
 							class = "form-control"
 							placeholder="Enter A Question" 
 							/>

@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "first")
-public class Student {
+public class Question {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "questions")
-	private String firstName;
+	@Column(name = "list")
+	private String list;
 	
 	@Column(name = "yes")
 	private int yes;
@@ -32,13 +32,13 @@ public class Student {
 		this.no = no;
 	}
 
-	public Student() {
+	public Question() {
 		
 	}
 	
-	public Student(String firstName, int yes, int no) {
+	public Question(String list, int yes, int no) {
 		super();
-		this.firstName = firstName;
+		this.list = list;
 		this.yes = yes;
 		this.no = no;
 	
@@ -49,11 +49,11 @@ public class Student {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getList() {
+		return list;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setList(String list) {
+		this.list = list;
 	}
 	
 	
@@ -68,7 +68,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", firstName=" + firstName + ", yes=" + yes + ", no=" + no + "]";
+		return "Student [id=" + id + ", firstName=" + list + ", yes=" + yes + ", no=" + no + "]";
 	}
 
 

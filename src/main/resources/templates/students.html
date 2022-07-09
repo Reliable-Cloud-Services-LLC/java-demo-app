@@ -22,10 +22,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Manage Questions</a>
+        <a class="nav-link" th:href="@{/questions}">Manage Questions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}"></a>
+        <a class="nav-link" th:href="@{/questions}"></a>
       </li>
     </ul>
   </div>
@@ -38,7 +38,7 @@
 		
 		<div class = "row">
 			<div class = "col-lg-3">
-				<a th:href = "@{/students/new}" class = "btn btn-primary btn-sm mb-3"> Add Questions</a>
+				<a th:href = "@{/questions/new}" class = "btn btn-primary btn-sm mb-3"> Add Questions</a>
 			</div>
 		</div>
 		<table class = "table table-striped table-bordered">
@@ -51,16 +51,16 @@
 			</thead>
 			
 			<tbody>
-				<tr th:each = "student: ${students}">
-					<td th:text = "${student.firstName}"></td>
+				<tr th:each = "question: ${questions}">
+					<td th:text = "${question.list}"></td>
 				
 					
 					<td>
-						<a th:href = "@{students/bigger/{id}/{yes}(id=${student.id}, yes =${student.yes})}"
+						<a th:href = "@{questions/bigger/{id}/{yes}(id=${question.id}, yes =${question.yes})}"
 						 class = "btn btn-primary">Vote Yes</a>
-						<a th:href = "@{students/some/{id}/{no}(id=${student.id}, no =${student.no})}"
+						<a th:href = "@{questions/some/{id}/{no}(id=${question.id}, no =${question.no})}"
 						 class = "btn btn-primary">Vote No</a>
-						<a th:href = "@{/students/{id}(id=${student.id})}"
+						<a th:href = "@{/questions/{id}(id=${question.id})}"
 						 class = "btn btn-danger">Delete</a>
 						 
 					</td>
