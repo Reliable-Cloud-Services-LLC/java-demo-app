@@ -1,5 +1,8 @@
 package net.javaguides.sms.entity;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +26,10 @@ public class Question {
 	
 	@Column(name ="no")
 	private int no;
+	
+	
+	@Column(name ="date")
+	String date;
 	
 	public int getNo() {
 		return no;
@@ -62,15 +69,30 @@ public class Question {
 		return yes;
 	}
 
+
 	public void setYes(int yes) {
 		this.yes = yes;
 	}
+	
+
 
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", firstName=" + list + ", yes=" + yes + ", no=" + no + "]";
 	}
 
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+		
+	}
+
+//	public static void main(String[] args) {
+//		currentDate()
+//	}
 
 
 }

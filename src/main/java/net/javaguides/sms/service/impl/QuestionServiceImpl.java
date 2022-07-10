@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import net.javaguides.sms.dto.QuestionDto;
@@ -31,6 +34,7 @@ public class QuestionServiceImpl implements QuestionService{
 
 	@Override
 	public List<Question> getAllQuestions() {
+		
 		return questionRepository.findAll();
 	}
 
@@ -99,6 +103,34 @@ public class QuestionServiceImpl implements QuestionService{
 		
 		return question;
 	}
+
+	@Override
+	public List<Question> getByKeyword(String keyword) {
+		// TODO Auto-generated method stub
+		if(keyword!=null) {
+			return questionRepository.findByKeyWord(keyword);
+		}
+//	 questionRepository.findByKeyWord(keyword);
+		return questionRepository.findAll();
+	}
+
+	@Override
+	public void deleteQuestionById(Long id) {
+		questionRepository.deleteById(id);		
+	}
+
+//	@Override
+//	public Page<Question> findPaginated(int pageNo, int pageSize,String keyword)
+//	{
+//		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+//		if(keyword!=null) {
+//			
+//		
+//		//Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+//		questionRepository.findByKeyWord(keyword, pageable);
+//		}
+//		return questionRepository.findAll(pageable);
+//	}
 
 
 }
