@@ -26,5 +26,5 @@ public interface QuestionService {
 	Question convertDtoToEntity(QuestionDto dto);
 	List<Question>getByKeyword(String keyword);
 	void deleteQuestionById(Long id);
-	//Page<Question> findPaginated(int pageNo, int pageSize, String keyword);
+	Page<Question> findPaginated(int pageNo, int pageSize);
 }

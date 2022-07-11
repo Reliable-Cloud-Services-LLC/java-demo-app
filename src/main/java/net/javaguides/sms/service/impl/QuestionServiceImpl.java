@@ -119,18 +119,17 @@ public class QuestionServiceImpl implements QuestionService{
 		questionRepository.deleteById(id);		
 	}
 
-//	@Override
-//	public Page<Question> findPaginated(int pageNo, int pageSize,String keyword)
-//	{
-//		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-//		if(keyword!=null) {
-//			
-//		
-//		//Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
-//		questionRepository.findByKeyWord(keyword, pageable);
-//		}
-//		return questionRepository.findAll(pageable);
-//	}
+	@Override
+	public Page<Question> findPaginated(int pageNo, int pageSize)
+	{
+		Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+		
+		
+		//Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+	
+	
+		return questionRepository.findAll(pageable);
+	}
 
 
 }

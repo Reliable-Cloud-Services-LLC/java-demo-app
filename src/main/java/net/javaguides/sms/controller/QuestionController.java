@@ -53,8 +53,10 @@ public class QuestionController {
 		model.addAttribute("listQuestions", listQuestions);
 		model.addAttribute("keyword", keyword);
 	
-		///questionPageable(pageable);
-		model.addAttribute("questions", questionService.getAllQuestionsDto());
+		//questionPageable(pageable);
+	//	model.addAttribute("questions", questionService.getAllQuestionsDto());
+		
+//		return findPaginated(1,model,keyword);
 		return "students";
 	}
 	
