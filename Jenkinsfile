@@ -98,6 +98,15 @@ terraform apply --auto-approve'''
 }
 }
 
+stage('Terraform destroy for other resources'){
+steps{
+    sh '''cd other
+terraform destroy --auto-approve'''
+}
+}
+
+
+
 
 }
 }
