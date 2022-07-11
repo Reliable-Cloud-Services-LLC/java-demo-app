@@ -25,10 +25,7 @@ stage('Git CheckOut'){
         }
             }
         }
- stage('ECR Scan Report'){
-      sh 'aws ecr describe-image-scan-findings --repository-name reliable-cloud-services-llc/java-demo-app --image-id imageTag=latest --region us-east-1'
-  }
-
+ 
 stage('terraform init for ecr'){
    steps{
    sh '''cd ecr
@@ -69,8 +66,12 @@ stage('image to ECR'){
     }
 }
 
+ stage('ECR Scan Report'){
+       steps{
 
-
+      sh 'aws ecr describe-image-scan-findings --repository-name reliable-cloud-services-llc/java-demo-app --image-id imageTag=latest --region us-east-1'
+  }
+}
 
 stage(' second Git CheckOut'){
     steps{
@@ -98,17 +99,6 @@ terraform apply --auto-approve'''
 }
 
 
-stage('Terraform destroy for ecr'){
-steps{
-    sh '''cd ecr
-terraform destroy --auto-approve'''
-}
-}
-stage('Terraform destroy for other'){
-steps{
-    sh '''cd other
-terraform destroy --auto-approve'''
-}
-}
+
 }
 }
