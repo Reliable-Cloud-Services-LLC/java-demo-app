@@ -140,3 +140,45 @@ You will recieve a URL for rancher after the process is complete
 3.Enter Cluster Name\
 4.Fill out the required fields\
 5.Create
+
+### Helm Chart Deployment
+```
+cd helm-chart-for-eks
+```
+
+```
+helm install my-helm helm-chart
+```
+kubectl get all
+```
+Access web app using Load Balancer Link for my-helm helm chart
+```
+
+### Jmeter for Performance Testing
+To use Jmeter GUI version on Amazon Ec2 instance\
+1.)Start up Putty\
+2.)Provide EC2 Host Name\
+3.)Expand SSH Tab and navigate towards X11 and enable X11 forwarding\
+4.)Expand SSH Tab and navigate to auth and provide PPK key for Authentication\
+5.)Select open\
+```
+cd jmeter/jmeter/apache-jmeter-5.5/bin
+```
+
+```
+sh jmeter.sh
+```
+To run Jmeter in NON-GUI mode follow previous steps and navigate to the bin folder/
+When running jmeter now provide the jmx file created from the GUI\
+run command\
+```
+sh jmeter.sh -n -t (jmx file) -l (logfile name).jtl
+```
+Use Non Gui mode for performance testing\
+
+To view logs open the jtl file in the GUI to view a table or graph\
+
+### SonarQube
+After running the pipeline in jenkins you are able to view SonarQube Logs to check for vulnerabilities or erorrs in the java code by recieving the url provided
+
+
